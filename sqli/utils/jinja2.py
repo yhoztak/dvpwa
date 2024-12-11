@@ -10,7 +10,9 @@ async def csrf_processor(request):
 
     def csrf_token():
         if '_csrf_token' not in session:
-            session['_csrf_token'] = uuid4().hex
+            user_id = request['user'].id if 'user' in request else 'anonymous'
+            session_id = session.get('identity', 'default_session')
+            session['_csrf_token'] = f"{uuid4().hex}-{user_id}-{session_id}"
         return session['_csrf_token']
 
     return {'csrf_token': csrf_token}
