@@ -3,7 +3,7 @@ policies:
   - policy_type: "BLAST"  # Required: Type of policy. Must be one of ["BLAST", "false_positive", "fix"]
     description: "Detect all vulnerabilities"  # Required: Description of the policy
     cwes: []  # Optional: List of CWE (Common Weakness Enumeration) codes related to this policy
-    ignore_scan_paths: ["sql/dao/*", "*middleware*"] # list out regex patterns for child folder to ignore. This would apply for all CWEs
+    ignore_scan_paths: ["migrations", "config"] # list out regex patterns for child folder to ignore. This would apply for all CWEs
 
   - policy_type: "BLAST" 
     description: "Detect SQL Injection vulnerabilities (CWE-89) in this Django-based application, which primarily handles user data and authentication. Ensure that all database queries are parameterized to prevent unauthorized access or manipulation of data. Additionally, identify potential Information Exposure (CWE-201) risks, ensuring that sensitive data such as user credentials and personal information are not exposed through logs or error messages."

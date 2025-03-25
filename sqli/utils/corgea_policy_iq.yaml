@@ -1,0 +1,5 @@
+version: 2 # increment this to deactivate all older version of policies and replace with newer version.
+policies:
+  - policy_type: "BLAST"  # Required: Type of policy. Must be one of ["BLAST", "false_positive", "fix"]
+    description: "This is utils folder around csrf and auth. Ensure to check all around authentication and raise any vulnerabilities around it. " 
+    cwes: []  
