@@ -1,9 +1,9 @@
-version: 2 # increment this to deactivate all older version of policies and replace with newer version.
+corgea_yaml_version: 1 # increment this to deactivate all older version of policies and replace with newer version.
 policies:
   - policy_type: "BLAST"  # Required: Type of policy. Must be one of ["BLAST", "false_positive", "fix"]
-    description: "Detect all vulnerabilities"  # Required: Description of the policy
+    description: "This is new policy. This is vulnerable by design app, so i want to go through all the files and able to identify all possible vulnerabilities."  # Required: Description of the policy
     cwes: []  # Optional: List of CWE (Common Weakness Enumeration) codes related to this policy
-    ignore_scan_paths: ["migrations", "config"] # list out regex patterns for child folder to ignore. This would apply for all CWEs
+    ignore_scan_paths: ["migrations", "config", ] # list out regex patterns for child folder to ignore. This would apply for all CWEs
 
   - policy_type: "BLAST" 
     description: "Detect SQL Injection vulnerabilities (CWE-89) in this Django-based application, which primarily handles user data and authentication. Ensure that all database queries are parameterized to prevent unauthorized access or manipulation of data. Additionally, identify potential Information Exposure (CWE-201) risks, ensuring that sensitive data such as user credentials and personal information are not exposed through logs or error messages."
