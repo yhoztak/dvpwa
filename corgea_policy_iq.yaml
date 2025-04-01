@@ -10,12 +10,12 @@ policies:
     cwes: [89, 201]
 
   - policy_type: "BLAST"
-    path: "sql/services/" # folder to apply this policy. Optionally, user can place separate YAML file in subfolder path instead of having path attribute here.
+    path: "sqli/" # folder to apply this policy. Optionally, user can place separate YAML file in subfolder path instead of having path attribute here.
     description: "This folder is responsible for data access that is used from public facing feature also."
     cwes: []
 
   - policy_type: "false_positive"
-    path: "sql/services/"
+    path: "sqli/services/"
     description: "Identify and flag potential false positive vulnerabilities by analyzing patterns that commonly lead to incorrect vulnerability detection, such as overly broad regex patterns or misconfigured security rules. This policy aims to reduce noise in vulnerability reports by ensuring that only genuine security issues are highlighted."
     cwes: []  # Empty list to select all CWEs.
 
