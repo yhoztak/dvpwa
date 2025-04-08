@@ -2,7 +2,7 @@
 # For more information, visit: https://docs.corgea.app/policies
 version: 1  # Specifies the version of the corgea YAML standard being used. Update only if the standard changes.
 policies:
-  - policy_type: "BLAST"
+  - type: "scan"
     description: >
       This policy is designed to identify and mitigate a wide range of security vulnerabilities within applications,
       particularly focusing on those that handle user data and authentication. It aims to detect common issues such as
@@ -10,13 +10,16 @@ policies:
       data is protected against Information Exposure. The policy leverages comprehensive analysis techniques to ensure that
       database queries are parameterized, user inputs are sanitized, and security configurations are correctly implemented
       to prevent unauthorized access or data manipulation.
-
-  - policy_type: "false_positive"
+    excludes:
+      - "migrations"
+      - "config"
+  - type: "false_positive"
     description: >
       While detecting false positives, it is crucial to implement thorough validation checks and cross-reference findings
       with known safe patterns to minimize incorrect alerts.
-
-  - policy_type: "fix"
+    cwes:
+      - 22
+  - type: "fix"
     description: >
       This policy ensures validation of file paths to prevent unauthorized access, proper closure of resources post-use,
       and sanitization of user inputs to avert command injection.
