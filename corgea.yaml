@@ -10,15 +10,14 @@ policies:
       data is protected against Information Exposure. The policy leverages comprehensive analysis techniques to ensure that
       database queries are parameterized, user inputs are sanitized, and security configurations are correctly implemented
       to prevent unauthorized access or data manipulation.
-    excludes:
-      - "migrations"
-      - "config"
+
   - type: "false_positive"
     description: >
       While detecting false positives, it is crucial to implement thorough validation checks and cross-reference findings
       with known safe patterns to minimize incorrect alerts.
     cwes:
       - 22
+
   - type: "fix"
     description: >
       This policy ensures validation of file paths to prevent unauthorized access, proper closure of resources post-use,
