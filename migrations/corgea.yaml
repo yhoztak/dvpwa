@@ -1,0 +1,10 @@
+# This is the corgea YAML file used for defining and managing security policies within applications.
+# For more information, visit: https://docs.corgea.app/policies
+version: 1  # Specifies the version of the corgea YAML standard being used. Update only if the standard changes.
+policies:
+  - type: "scan"
+    description: >
+      This folder is primarily used for managing migration files, which are essential for database schema changes. 
+      Due to the nature of these files, it is less likely that security issues should arise from this folder. 
+      However, it is still important to ensure that any scripts or configurations within are reviewed for best practices 
+      to maintain overall application security.

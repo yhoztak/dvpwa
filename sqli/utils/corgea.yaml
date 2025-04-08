@@ -1,0 +1,37 @@
+# This is the corgea YAML file used for defining and managing security policies within applications.
+# For more information, visit: https://docs.corgea.app/policies
+version: 1  # Specifies the version of the corgea YAML standard being used. Update only if the standard changes.
+policies:
+  - type: "scan"
+    description: >
+      This folder, sqli.utils, is primarily focused on managing authentication processes. The policies within are designed
+      to scan and ensure the security of authentication mechanisms, identifying vulnerabilities such as improper session
+      management, weak password policies, and inadequate protection of authentication tokens.
+    excludes:
+      - "migrations"
+      - "config"
+  - type: "false_positive"
+    description: >
+      In the context of the sqli.utils folder, false positives can arise from overly aggressive detection of SQL injection
+      patterns. It is essential to refine detection algorithms to differentiate between actual vulnerabilities and benign
+      code patterns. This involves enhancing the accuracy of pattern matching and incorporating contextual analysis to
+      reduce unnecessary alerts, ensuring that only genuine threats are flagged.
+    cwes:
+      - 89
+      - 22
+  - type: "fix"
+    description: >
+      This policy is designed to address and remediate vulnerabilities identified in the application, particularly focusing
+      on ensuring secure coding practices. It includes measures to validate and sanitize all user inputs to prevent SQL Injection
+      and Cross-Site Scripting (XSS) attacks. Additionally, it enforces secure session management practices, such as setting
+      secure and HttpOnly flags on cookies, and implementing proper session expiration. The policy also emphasizes the importance
+      of using parameterized queries to prevent SQL Injection and ensuring that all sensitive data is encrypted both in transit
+      and at rest.
+    cwes:
+      - 79  # Cross-Site Scripting (XSS)
+      - 89  # SQL Injection
+      - 311 # Missing Encryption of Sensitive Data
+      - 352 # Cross-Site Request Forgery (CSRF)
+      - 384 # Session Fixation
+      - 614 # Sensitive Cookie in HTTPS Session Without 'Secure' Attribute
+      - 642 # External Control of Critical State Data

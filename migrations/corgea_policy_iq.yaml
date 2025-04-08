@@ -1,6 +1,0 @@
-version: 2 # important for child policy to have the same version
-policies:
-  - policy_type: "BLAST"  # Required: Type of policy. Must be one of ["BLAST", "false_positive", "fix"]
-    description: "Detect all vulnerabilities"  # Required: Description of the policy
-    cwes: [200, 89]  # Optional: List of CWE (Common Weakness Enumeration) codes related to this policy
-
