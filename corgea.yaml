@@ -4,8 +4,8 @@ version: 1  # Specifies the version of the corgea YAML standard being used. Upda
 policies:
   - type: "scan"
     description: >
-      This policy is designed to identify and mitigate a wide range of security vulnerabilities within applications,
-      particularly focusing on those that handle user data and authentication. It aims to detect common issues such as
+      This is web application that handle data around course and students, but vulnerable by design.
+      Check vulnerabilty, particularly focusing on those that handle user data and authentication. It aims to detect common issues such as
       SQL Injection, Cross-Site Scripting (XSS), and Cross-Site Request Forgery (CSRF), while also ensuring that sensitive
       data is protected against Information Exposure. The policy leverages comprehensive analysis techniques to ensure that
       database queries are parameterized, user inputs are sanitized, and security configurations are correctly implemented
